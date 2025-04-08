@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.zshrc: zshrc
+    ~/.p10k.zsh: p10k.zsh
+
+
+- shell:
+  - git submodule sync --recursive
+  - git submodule update --init --recursive
