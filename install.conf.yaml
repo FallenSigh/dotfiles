@@ -10,7 +10,9 @@
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.config/nvim: nvim
     ~/.vimrc: vim/vimrc
+    ~/.zsh: zsh
 
 - shell:
   - git submodule sync --recursive
   - git submodule update --init --recursive
+  - zsh/install_plugins.sh
