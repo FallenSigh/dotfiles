@@ -34,3 +34,5 @@ source ~/.zsh/local_index.sh
 
 # bind keys
 bindkey '^z' autosuggest-execute
+
+export EDITOR=nvim
