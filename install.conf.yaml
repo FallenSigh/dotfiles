@@ -6,10 +6,10 @@
 - clean: ["~"]
 
 - link:
-    ~/.zshrc: zshrc
-    ~/.p10k.zsh: p10k.zsh
+    ~/.zshrc: zsh/zshrc
+    ~/.p10k.zsh: zsh/p10k.zsh
     ~/.config/nvim: nvim
-    ~/.vimrc: vimrc
+    ~/.vimrc: vim/vimrc
 
 - shell:
   - git submodule sync --recursive
