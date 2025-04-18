@@ -1,7 +1,7 @@
 -- 基础设置
 vim.opt.encoding = "utf-8"
 vim.opt.number = true             -- 显示行号
-vim.opt.relativenumber = true    -- 相对行号
+vim.opt.relativenumber = false    -- 相对行号
 vim.opt.wrap = false             -- 禁止自动换行
 vim.opt.cursorline = true        -- 高亮当前行
 vim.opt.mouse = "a"              -- 启用鼠标

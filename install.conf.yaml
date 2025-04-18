@@ -11,6 +11,8 @@
     ~/.config/nvim: nvim
     ~/.vimrc: vim/vimrc
     ~/.zsh: zsh
+    ~/.config/hypr: hypr
+    ~/.config/rofi: rofi
 
 - shell:
   - git submodule sync --recursive
