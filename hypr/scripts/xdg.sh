@@ -5,14 +5,13 @@ killall -e xdg-desktop-portal-kde
 killall -e xdg-desktop-portal-gtk
 killall -e xdg-desktop-portal
 
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_ESKTOP=hyprland
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_ESKTOP=Hyprland
 
 systemctl --user stop pulseaudio
 systemctl --user stop pipewire
 systemctl --user stop xdg-desktop-portal
 systemctl --user stop xdg-desktop-kde
 systemctl --user stop xdg-desktop-hyprland
-systemctl --user stop xdg-desktop-wlr
 
 sleep 0.1
 
