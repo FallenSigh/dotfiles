@@ -1,6 +1,6 @@
 configuration {
     modi:                       "drun,filebrowser,window,run";
-    font:                       "Fira Sans 11";
+    font:                       "Noto Emoji 10";
     show-icons:                 true;
     icon-theme:                 "Tela-circle-dracula";
     display-drun:                " ";
