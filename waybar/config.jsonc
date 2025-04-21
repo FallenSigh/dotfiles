@@ -1,0 +1,156 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "backlight",
+        "battery",
+        "power-profiles-daemon",
+        "tray",
+        "clock"
+    ],
+    "cpu": {
+        "interval": 10,
+        "format": " {}%",
+        "on-click": "kitty htop"
+    },
+    "memory": {
+        "interval": 10,
+        "format": " {}%",
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    }, 
+    "custom/launcher": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "rofi -show drun -replace -i --terminal kitty"
+    },
+    "mpris": {
+        "interval": 1,
+        "[format]-len": 50,
+        "dynamic-len": 50,
+        "dynamic-importance-order": ["title", "artist", "position", "length"],
+        "dynamic-order": ["position", "length"],
+        // "format": "{player_icon} {title} - {artist} [{position}/{length}]",
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "▶"
+        }
+    },
+    // 核心模块配置
+    "hyprland/workspaces": {
+        // "format": "{name}",
+        "format": "{name} {windows} ",
+        "format-window-separator": " ",
+        "window-rewrite-default": "",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<Google-chrome>": "", 
+            "class<org.kde.dolphin>": "",
+            "title<.*youtube.*>": "",
+            // "title<.*bilibili.*>": "", 
+            "kitty": "", 
+            "code": "󰨞",
+            // "class<io.github.waylyrics.Waylyrics>": "",
+            "class<musicfox>": "",
+            "class<wechat>": "",
+            "class<qq>": "",
+            "class<clash-verge>": " "
+            // "class<.*fcitxfcit.*>": "",
+            // "title<.*Fcitx5 Input Window.*>": "",
+            // "class<zoom>": ""
+        },
+
+        "icon-size": 14,
+        "active-only": false,
+        "all-outputs": false,
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "rewrite": {
+            "(.*) - Google Chrome": "$1",
+            "Visual Studio Code - (.*)": "VSCode - $1"
+        },
+        "separate-outputs": true,
+        "max-length": 60,
+        "icon": true
+    },
+    "clock": {
+        "format": "  {:%H:%M}",
+        "timezones": ["Asia/Shanghai"],
+        "format-alt": "  {:%Y-%m-%d %A}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "\uf6a9",
+        "format-icons": {
+            "default": ["", " ", " "]
+        },
+        "max-volume": 200,
+        "scroll-step": 5
+    },
+    "network": {
+        "format-wifi": "  {essid}({signalStrength}%)",
+        "format-ethernet": "󰈁 有线",
+        "format-disconnected": "󰖪  离线",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip": false
+    },
+    "bluetooth": {
+	    "format": "{status}",
+	    "format-connected": "{device_alias}",
+	    "format-connected-battery": "{device_alias}({device_battery_percentage}%)",
+	    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "backlight": {
+        "format": "{icon}{percent}%",
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    },
+    "tray": {
+        "spacing": 8
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "format-alt": "{icon} {time}"
+    }
+}
